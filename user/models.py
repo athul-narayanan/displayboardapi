@@ -43,9 +43,18 @@ class User(AbstractBaseUser):
     initial = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
     email = models.EmailField(max_length=255, unique=True)
-    mobile = models.CharField(max_length=14)
     password = models.CharField(max_length=255)
     role = models.ForeignKey(UserRole, on_delete=models.CASCADE, default=1)
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
+
+class UserSchedules(models.Model):
+    """
+    This model defines user schedules in the system
+    """
+    title = models.CharField(max_length=255)
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+    color = models.CharField(max_length=255)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
