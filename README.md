@@ -18,6 +18,7 @@ docker run --name asepostgres -e POSTGRES_PASSWORD={Password} -p 5433:5432 -d po
 docker exec -it asepostgres psql -U postgres -c "CREATE DATABASE displayboarddatabase";
 
 python manage.py runserver 
+
 The above command runs the application on port 8000. Make sure that you have installed required dependencies and started postgres sql in docker.
 
 shut it down manually with Ctrl-C.
