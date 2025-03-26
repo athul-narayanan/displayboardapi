@@ -19,7 +19,6 @@ class UserScheduleView(generics.CreateAPIView):
     serializer_class = UserScheduleSerializer # Uses userschedules serializer to manage user schedules
 
     def get(self, request):
-        id = request.data.get("id")
         month = request.data.get("month") 
         if month is None:
             month = datetime.now().month
@@ -27,7 +26,7 @@ class UserScheduleView(generics.CreateAPIView):
             return Response({
                 'error': 'Invalid month',
             }, status=status.HTTP_400_BAD_REQUEST)
-        schedules = UserSchedules.objects.filter(start__month=month,id=id )
+        schedules = UserSchedules.objects.filter(start__month=month,user=request.user )
         serializedData = self.serializer_class(schedules,many=True)
         return Response(serializedData.data,status=status.HTTP_201_CREATED)
     
