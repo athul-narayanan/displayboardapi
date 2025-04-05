@@ -5,9 +5,6 @@ View for User model
 from rest_framework import generics
 from user.serializers.userserializer import UserSerializer
 from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
-from rest_framework import status
-from user.models import User, UserRole
 
 class CreateUserView(generics.CreateAPIView):
     """

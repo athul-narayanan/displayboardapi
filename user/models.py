@@ -45,7 +45,9 @@ class User(AbstractBaseUser):
     email = models.EmailField(max_length=255, unique=True)
     password = models.CharField(max_length=255)
     role = models.ForeignKey(UserRole, on_delete=models.CASCADE, default=1)
+    ping_started = models.BooleanField(default=False)
     objects = UserManager()
+    
 
     USERNAME_FIELD = 'email'
 

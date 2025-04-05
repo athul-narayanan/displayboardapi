@@ -71,7 +71,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'corsheaders',
-    'drf_spectacular'
+    'drf_spectacular',
+    'django_apscheduler'
 ]
 
 MIDDLEWARE = [
