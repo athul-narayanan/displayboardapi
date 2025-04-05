@@ -25,5 +25,9 @@ python manage.py runserver
 
 The above command runs the application on port 8000. Make sure that you have installed required dependencies and started postgres sql in docker.
 
+python manage.py runapscheduler
+
+The above command runs all the cron jobs.
+
 shut it down manually with Ctrl-C.
 
