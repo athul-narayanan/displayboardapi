@@ -9,7 +9,7 @@ Before setting up the project, you have the following installed:
 
 # Setup
 
-clone the application using git clone https://github.com/athul-narayanan/displayboardapi.git
+Clone [Repository](https://github.com/athul-narayanan/displayboardapi.git) locally.
 
 cd displayboardapi
 
