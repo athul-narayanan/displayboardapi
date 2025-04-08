@@ -4,9 +4,8 @@ This project provides API interface to schedule activities.
 
 ## Prerequisites
 Before setting up the project, you have the following installed:
-
-Install Docker Desktop Download Docker Desktop
-Install Pgadmin 4 Download Pgadmin 4
+1. Install Docker Desktop [Download Docker Desktop](https://www.docker.com/products/docker-desktop/)
+2. Install Pgadmin 4  [Download Pgadmin 4](https://www.pgadmin.org/download/)
 
 # Setup
 
