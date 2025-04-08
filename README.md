@@ -3,28 +3,35 @@
 This project provides API interface to schedule activities.
 
 # Setup
-git clone https://github.com/athul-narayanan/displayboardapi.git
+
+clone the application using git clone https://github.com/athul-narayanan/displayboardapi.git
 
 cd displayboardapi
 
 # Install and prepare dependencies
 
-pip install -r requirements.txt
+1) Install and prepare dependencies using pip ```install -r requirements.txt```
 
-docker pull postgres
+2) Pull the docker image for postgres ```using docker pull postgres```
+3) Run the docker container using ```docker run --name asepostgres -e POSTGRES_PASSWORD=Algoma@2024 -p 5433:5432 -d postgres```
+4) Create database in the container ```docker exec -it asepostgres psql -U postgres -c "CREATE DATABASE displayboarddatabase"```
+5) Prepare database migrations for all tables using ```python manage.py makemigrations user```
+6) Apply Migrations to the database using ```python manage.py migrate```
+7) Add Entry for user roles by running below SQL commands
+   ```sql
+    INSERT INTO public.userrole (id, role_name)
+    VALUES (1, 'USER');
 
-docker run --name asepostgres -e POSTGRES_PASSWORD={Password} -p 5433:5432 -d postgres
+    INSERT INTO public.userrole (id, role_name)
+    VALUES (2, 'ADMIN');
 
-docker exec -it asepostgres psql -U postgres -c "CREATE DATABASE displayboarddatabase";
-
-python manage.py makemigrations user - make database migrations
-
-python manage.py migrate - apply migrations to actual database
-
-python manage.py runserver 
-
-The above command runs the application on port 8000. Make sure that you have installed required dependencies and started postgres sql in docker.
-
+    INSERT INTO public.userrole (id, role_name)
+    VALUES (3, 'MASTER');
+8) Run the application using ```python manage.py runserver```
+   The above command runs the application on port 8000. Make sure that you have installed required dependencies and started postgres sql in docker.
+  
+9) Once the application is started cron jobs can be started using ```python manage.py```
+10) shut down the application manually using ```Ctrl-C```
 python manage.py runapscheduler
 
 The above command runs all the cron jobs.
