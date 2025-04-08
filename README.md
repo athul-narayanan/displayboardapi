@@ -28,8 +28,9 @@ cd displayboardapi
     INSERT INTO public.userrole (id, role_name)
     VALUES (3, 'MASTER');
 8) Run the application using ```python manage.py runserver```
+   
    The above command runs the application on port 8000. Make sure that you have installed required dependencies and started postgres sql in docker.
   
-9) Once the application is started cron jobs can be started using ```python manage.py runapscheduler```
-10) shut down the application manually using ```Ctrl-C```
+10) Once the application is started cron jobs can be started using ```python manage.py runapscheduler```
+11) shut down the application manually using ```Ctrl-C```
 
