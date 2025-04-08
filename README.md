@@ -2,6 +2,12 @@
 
 This project provides API interface to schedule activities.
 
+## Prerequisites
+Before setting up the project, you have the following installed:
+
+Install Docker Desktop Download Docker Desktop
+Install Pgadmin 4 Download Pgadmin 4
+
 # Setup
 
 clone the application using git clone https://github.com/athul-narayanan/displayboardapi.git
