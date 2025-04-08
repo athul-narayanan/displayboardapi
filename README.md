@@ -10,9 +10,9 @@ cd displayboardapi
 
 # Install and prepare dependencies
 
-1) Install and prepare dependencies using pip ```install -r requirements.txt```
+1) Install and prepare dependencies using ```pip install -r requirements.txt```
 
-2) Pull the docker image for postgres ```using docker pull postgres```
+2) Pull the docker image for postgres using ``` docker pull postgres```
 3) Run the docker container using ```docker run --name asepostgres -e POSTGRES_PASSWORD=Algoma@2024 -p 5433:5432 -d postgres```
 4) Create database in the container ```docker exec -it asepostgres psql -U postgres -c "CREATE DATABASE displayboarddatabase"```
 5) Prepare database migrations for all tables using ```python manage.py makemigrations user```
@@ -30,11 +30,6 @@ cd displayboardapi
 8) Run the application using ```python manage.py runserver```
    The above command runs the application on port 8000. Make sure that you have installed required dependencies and started postgres sql in docker.
   
-9) Once the application is started cron jobs can be started using ```python manage.py```
+9) Once the application is started cron jobs can be started using ```python manage.py runapscheduler```
 10) shut down the application manually using ```Ctrl-C```
-python manage.py runapscheduler
-
-The above command runs all the cron jobs.
-
-shut it down manually with Ctrl-C.
 
